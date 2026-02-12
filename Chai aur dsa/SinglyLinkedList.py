@@ -26,6 +26,12 @@ class SinglyLinkedlist:
 
     # method to insert a node just after a given value present in the singly LL
     def insertInMid(self, value, x):
+
+        # if the list is empty
+        if(self.head == None):
+            print("List is empty")
+            return
+
         temp = Node(value)
         t1 = self.head
 
@@ -64,6 +70,12 @@ class SinglyLinkedlist:
 
     # method to print the whole singly linked list
     def printLL(self):
+
+        # if the list is empty
+        if(self.head == None):
+            print("List is empty")
+            return
+        
         t1 = self.head
         while(t1 != None):
             print(t1.data)
