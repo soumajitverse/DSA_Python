@@ -20,21 +20,16 @@ def insert(root, value):
 
 
 def search(root, value):
-    if(root == None):
-        print("Element not found.")
-        return
-
-    if(root.data == value):
-        print("Element found.")
-        return
+    if root is None:
+        return False
     
-    if(root.data > value):
-        search(root.left, value)
-
+    if root.data == value:
+        return True
+    
+    if value < root.data:
+        return search(root.left, value)
     else:
-        search(root.right, value)
-
-    
+        return search(root.right, value)
 
 def inOrder(root):
     if(root != None):
@@ -55,7 +50,6 @@ inOrder(root)
 
 print("\n")
 
-search(root, 40)
-search(root, 100)
-
+print(search(root, 40))   # True
+print(search(root, 100))  # False
 
